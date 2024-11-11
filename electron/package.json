@@ -1,0 +1,12 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:main": "cd ../ && electron ./dist-electron/main/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
