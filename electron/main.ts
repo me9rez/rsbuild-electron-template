@@ -1,10 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
-import { createRequire } from 'node:module'
-import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import log from 'electron-log/main'
-import { randomUUID } from 'node:crypto'
-
 
 const logPath = path.join(app.getPath('documents'), `${app.getName()}`, `logs/test.log`)
 
@@ -53,7 +49,6 @@ async function createWindow(name: "home" | "update") {
 
   await loadPage(win, name)
 }
-
 
 
 async function loadPage(win: BrowserWindow, name: "home" | "update") {

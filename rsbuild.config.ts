@@ -25,7 +25,6 @@ const getElectronInput = (type: "main" | "preload") => {
             htmlPlugin: false,
             rspack: {
                 target: type === 'main' ? "electron-main" : "electron-preload",
-                // 未生效
                 devServer: {
                     devMiddleware: {
                         writeToDisk: true
@@ -33,7 +32,12 @@ const getElectronInput = (type: "main" | "preload") => {
                 }
             }
         },
-        output: getElectronOutput(type)
+        output: getElectronOutput(type),
+        performance: {
+            chunkSplit: {
+                strategy: "all-in-one"
+            }
+        }
     }
     return config
 }

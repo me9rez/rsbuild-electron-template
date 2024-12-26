@@ -11,3 +11,8 @@ build:
 dev:
     pnpm rimraf dist dist-electron
     pnpm run-p dev:renderer
+
+
+preview:
+    just build
+    pnpm electron ./dist-electron/main/main.js
