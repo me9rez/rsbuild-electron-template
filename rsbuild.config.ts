@@ -10,6 +10,7 @@ const getElectronOutput = (type: "main" | "preload") => {
         filenameHash: false,
         cleanDistPath: true,
         minify: false,
+        sourceMap: false
     }
     return config
 }
@@ -25,19 +26,18 @@ const getElectronInput = (type: "main" | "preload") => {
             htmlPlugin: false,
             rspack: {
                 target: type === 'main' ? "electron-main" : "electron-preload",
-                devServer: {
-                    devMiddleware: {
-                        writeToDisk: true
-                    }
-                }
             }
         },
         output: getElectronOutput(type),
         performance: {
             chunkSplit: {
                 strategy: "all-in-one"
-            }
-        }
+            },
+            buildCache: true
+        },
+        dev: {
+            writeToDisk: true
+        },
     }
     return config
 }
@@ -75,10 +75,10 @@ export default defineConfig({
                     target: "web",
                     dependencies: ["electron-main", "electron-preload"]
                 }
+            },
+            performance: {
+                buildCache: true
             }
         },
     },
-    dev: {
-        writeToDisk: true
-    }
 })

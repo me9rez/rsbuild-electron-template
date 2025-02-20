@@ -9,9 +9,8 @@ build:
     pnpm rsbuild build
 
 dev:
-    pnpm rimraf dist dist-electron
-    pnpm run-p dev:renderer
-
+    pnpm rimraf dist-electron
+    pnpm dev
 
 preview:
     just build

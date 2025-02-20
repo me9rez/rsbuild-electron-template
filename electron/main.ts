@@ -1,6 +1,8 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
 import log from 'electron-log/main'
+import { insert, query } from './util'
+import { APP_ROOT, MAIN_DIST, RENDERER_DIST } from './pathe'
 
 const logPath = path.join(app.getPath('documents'), `${app.getName()}`, `logs/test.log`)
 
@@ -13,6 +15,7 @@ const createLogger = (id: string) => {
   anotherLogger.initialize({ preload: true })
   return anotherLogger
 }
+
 const logger = createLogger(app.getName())
 
 // const require = createRequire(import.meta.url)
@@ -29,9 +32,7 @@ const logger = createLogger(app.getName())
 // │ │ └── preload.mjs
 // │
 
-const APP_ROOT = path.join(__dirname, '../..')
-const MAIN_DIST = path.join(APP_ROOT, 'dist-electron')
-const RENDERER_DIST = path.join(APP_ROOT, 'dist')
+
 
 async function createWindow(name: "home" | "update") {
   const win = new BrowserWindow({
@@ -78,11 +79,22 @@ app.on('activate', async () => {
 })
 
 app.whenReady().then(async () => {
+  await createWindow("home")
+  handleIPC()
+})
+
+
+function handleIPC() {
   ipcMain.handle('save-log', () => {
     log.info('save-log');
   })
   ipcMain.handle('create-update-window', async () => {
     await createWindow('update')
   })
-  await createWindow("home")
-})
+  ipcMain.handle('insert', async (evt, ...args) => {
+    return await insert(args)
+  })
+  ipcMain.handle('query', async (evt, ...args) => {
+    return await query()
+  })
+}
