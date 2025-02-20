@@ -1,26 +1,19 @@
-# Rsbuild Electron Project
+# Rsbuild开发Electron示例项目
 
-## Setup
 
-Install the dependencies:
+# 安装依赖
 
 ```bash
 pnpm install
 ```
 
-## Get Started
-
-Start the dev server:
+# 启动开发服务器:
 
 ```bash
-pnpm dev:renderer
+pnpm dev
 ```
 
-```bash
-pnpm dev:main
-```
-
-Build the app for production:
+# 构建生产环境应用:
 
 ```bash
 pnpm build:win

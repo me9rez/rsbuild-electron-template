@@ -1,8 +1,8 @@
 build-dir: build
-    pnpm cross-env HTTPS_PROXY=http://127.0.0.1:7890 && pnpm electron-builder --dir
+    pnpm electron-builder --dir
 
 build-win: build
-    pnpm cross-env HTTPS_PROXY=http://127.0.0.1:7890 && pnpm electron-builder --win
+    pnpm electron-builder --win
 
 build:
     pnpm rimraf dist dist-electron

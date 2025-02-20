@@ -11,14 +11,14 @@ function sleep(time: number) {
 export default defineConfig({
   scripts: [
     {
-      name: 'dev1',
+      name: 'rsbuild',
       command: `pnpm dev:renderer`,
       wait: async () => {
         return true
       },
     },
     {
-      name: `dev2`,
+      name: `electron`,
       command: `pnpm dev:main`,
       wait: async () => {
         await sleep(3000)

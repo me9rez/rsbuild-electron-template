@@ -8,11 +8,11 @@
     "dev:main": "chcp 65001 && electron ./dist-electron/main/main.js",
     "svelte-check": "svelte-check --tsconfig ./tsconfig.json",
     "build": "rimraf dist dist-electron && rsbuild build",
-    "build:dir": "pnpm build && cross-env HTTPS_PROXY=http://127.0.0.1:7890 && electron-builder --dir",
-    "build:win": "pnpm build && cross-env HTTPS_PROXY=http://127.0.0.1:7890 && electron-builder --win",
-    "init:prisma": "prisma init --with-model --datasource-provider sqlite",
-    "migrate:dev": "prisma migrate dev --name init",
-    "studio": "prisma studio"
+    "build:dir": "pnpm build && cross-env HTTPS_PROXY=http://127.0.0.1:7890 electron-builder --dir",
+    "build:win": "pnpm build && cross-env HTTPS_PROXY=http://127.0.0.1:7890 electron-builder --win",
+    "db-gen": "prisma init --with-model --datasource-provider sqlite",
+    "db-push": "prisma migrate dev --name init",
+    "db-studio": "prisma studio"
   },
   "devDependencies": {
     "@electron-toolkit/preload": "^3.0.1",
