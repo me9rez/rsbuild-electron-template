@@ -1,3 +1,10 @@
+<div align="center" style="display:flex;gap:24px">
+  <img src="https://svelte.dev/favicon.png" height="100"/>
+    <img src="https://www.electronjs.org/assets/img/logo.svg" height="100" />
+ <img src="https://assets.rspack.dev/rsbuild/rsbuild-logo.svg" height="100" />
+</div>
+
+
 # Rsbuild开发Electron示例项目
 
 本项目是一个使用 Rsbuild 开发 Electron 应用的示例项目，集成了 Svelte 前端框架和 Prisma 数据库工具。
