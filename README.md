@@ -4,6 +4,7 @@
  <img src="https://assets.rspack.dev/rsbuild/rsbuild-logo.svg" height="100" />
 </div>
 
+---
 
 # Rsbuild开发Electron示例项目
 
