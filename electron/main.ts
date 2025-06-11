@@ -1,7 +1,7 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
 import log from 'electron-log/main'
-import { insert, query } from './util'
+// import { insert, query } from './util'
 import { APP_ROOT, MAIN_DIST, RENDERER_DIST } from './pathe'
 
 const logPath = path.join(app.getPath('documents'), `${app.getName()}`, `logs/test.log`)
@@ -92,9 +92,9 @@ function handleIPC() {
     await createWindow('update')
   })
   ipcMain.handle('insert', async (evt, ...args) => {
-    return await insert(args)
+    // return await insert(args)
   })
   ipcMain.handle('query', async (evt, ...args) => {
-    return await query()
+    // return await query()
   })
 }
