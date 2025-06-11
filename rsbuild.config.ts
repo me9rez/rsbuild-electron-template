@@ -1,4 +1,4 @@
-import { defineConfig, type OutputConfig, type EnvironmentConfig, HtmlRspackPlugin } from '@rsbuild/core'
+import { defineConfig, type OutputConfig, type EnvironmentConfig } from '@rsbuild/core'
 import { pluginSvelte } from '@rsbuild/plugin-svelte';
 
 const getElectronOutput = (type: "main" | "preload") => {
@@ -9,7 +9,6 @@ const getElectronOutput = (type: "main" | "preload") => {
         },
         filenameHash: false,
         cleanDistPath: true,
-        minify: false,
         sourceMap: false
     }
     return config
@@ -33,7 +32,6 @@ const getElectronInput = (type: "main" | "preload") => {
             chunkSplit: {
                 strategy: "all-in-one"
             },
-            buildCache: true
         },
         dev: {
             writeToDisk: true
@@ -60,7 +58,6 @@ export default defineConfig({
                 assetPrefix: "../",
                 distPath: {
                     html: 'pages',
-                    // 不指定这些静态文件位置，应用打包后路径映射错误
                     css: 'static',
                     font: 'static',
                     image: 'static',
@@ -77,7 +74,7 @@ export default defineConfig({
                 }
             },
             performance: {
-                buildCache: true
+                
             }
         },
     },
