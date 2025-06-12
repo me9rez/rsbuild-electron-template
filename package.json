@@ -25,14 +25,14 @@
     "dayjs": "^1.11.13",
     "electron": "36.4.0",
     "electron-builder": "^26.0.12",
-    "electron-log": "^5.4.0",
+    "electron-log": "^5.4.1",
     "es-toolkit": "^1.39.3",
     "execa": "^9.6.0",
     "parallel-wait-run": "^0.2.2",
     "rimraf": "^6.0.1",
     "svelte": "^5.33.19",
     "svelte-check": "^4.2.1",
-    "tsx": "^4.20.0",
+    "tsx": "^4.20.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {

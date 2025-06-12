@@ -9,7 +9,8 @@ const getElectronOutput = (type: "main" | "preload") => {
         },
         filenameHash: false,
         cleanDistPath: true,
-        sourceMap: false
+        sourceMap: false,
+        minify: false
     }
     return config
 }
