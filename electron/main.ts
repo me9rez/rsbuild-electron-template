@@ -1,7 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
 import log from 'electron-log/main'
-// import { insert, query } from './util'
 import { APP_ROOT, MAIN_DIST, RENDERER_DIST } from './pathe'
 
 const logPath = path.join(app.getPath('documents'), `${app.getName()}`, `logs/test.log`)
@@ -16,7 +15,7 @@ const createLogger = (id: string) => {
   return anotherLogger
 }
 
-const logger = createLogger(app.getName())
+// const logger = createLogger(app.getName())
 
 // const require = createRequire(import.meta.url)
 // const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -92,9 +91,7 @@ function handleIPC() {
     await createWindow('update')
   })
   ipcMain.handle('insert', async (evt, ...args) => {
-    // return await insert(args)
   })
   ipcMain.handle('query', async (evt, ...args) => {
-    // return await query()
   })
 }
