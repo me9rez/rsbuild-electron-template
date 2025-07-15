@@ -16,28 +16,28 @@
   },
   "devDependencies": {
     "@electron-toolkit/preload": "^3.0.2",
-    "@faker-js/faker": "^9.8.0",
-    "@rsbuild/core": "1.4.0",
+    "@faker-js/faker": "^9.9.0",
+    "@rsbuild/core": "1.4.6",
     "@rsbuild/plugin-svelte": "^1.0.10",
-    "@types/node": "^24.0.4",
+    "@types/node": "^24.0.14",
     "chokidar": "^4.0.3",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
-    "electron": "37.1.0",
+    "electron": "37.2.1",
     "electron-builder": "^26.0.12",
     "electron-log": "^5.4.1",
-    "es-toolkit": "^1.39.5",
+    "es-toolkit": "^1.39.7",
     "execa": "^9.6.0",
     "parallel-wait-run": "^0.2.2",
     "rimraf": "^6.0.1",
-    "svelte": "^5.34.8",
+    "svelte": "^5.36.0",
     "svelte-check": "^4.2.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@prisma/client": "^6.10.1",
-    "prisma": "^6.10.1"
+    "@prisma/client": "^6.11.1",
+    "prisma": "^6.11.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
